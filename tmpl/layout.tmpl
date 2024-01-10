@@ -41,22 +41,25 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav <?js if (env.conf.docdash.wrap) { ?>class="wrap"<?js } ?>>
+
+    <div class="theme-toggle-wrapper">
+        <span class="theme-icon">☀️</span>
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" onclick="toggleDarkMode()">
+            <span class="slider round"></span>
+        </label>
+        <span class="theme-icon">🌙</span>
+    </div>
+
     <?js if (env.conf.docdash.search) { ?>
     <input type="text" id="nav-search" placeholder="Search" />
     <?js } ?>
     <?js if (!env.conf.docdash.commonNav) { ?>
     <?js= this.nav ?>
     <?js } ?>
-    <div class="theme-toggle-wrapper">
-    <span class="theme-icon">☀️</span>
-    <label class="theme-switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider round"></span>
-    </label>
-    <span class="theme-icon">🌙</span>
-</div>
 
 </nav>
+
 
 <div id="main">
     <?js if (title != 'Home') { ?>
